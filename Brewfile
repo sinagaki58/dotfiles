@@ -1,14 +1,20 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
-homebrew/cask-versions
+tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 
 brew "bat"
-brew "go"
 brew "mas"
 brew "tmux"
 brew "tree"
+brew 'n'
+brew 'tig'
+brew 'ripgrep'
+brew 'fd'
+brew 'fzf'
+brew 'exa'
+
 cask "google-chrome"
 cask "iterm2"
 cask "1password"
@@ -20,6 +26,9 @@ cask 'visual-studio-code'
 cask 'notion'
 cask 'hyperswitch'
 cask 'cmd-eikana'
+cask 'hiddenbar'
+
 mas "Slack", id: 803453959
 mas "Spark", id: 1176895641
 mas "Xcode", id: 497799835
+mas "Magnet", id: 441258766
