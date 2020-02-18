@@ -30,5 +30,5 @@ cask 'hiddenbar'
 
 mas "Slack", id: 803453959
 mas "Spark", id: 1176895641
-mas "Xcode", id: 497799835
 mas "Magnet", id: 441258766
+mas "Xcode", id: 497799835
