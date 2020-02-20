@@ -11,9 +11,12 @@ link:
 	ln -sf ~/dotfiles/.zshrc ~/.zshrc
 	ln -sf ~/dotfiles/.tigrc ~/.tigrc
 
+install:
+	brew bundle --file=~/dotfiles/Brewfile
+
 cp-gitconfig:
 	cp ~/dotfiles/.gitconfig ~/.gitconfig
 
-install:
-	brew bundle --file=~/dotfiles/Brewfile
+rust:
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
