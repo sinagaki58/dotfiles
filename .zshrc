@@ -2,11 +2,24 @@
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.deno/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+
+# zplug
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+zplug "norman-abramovitz/cf-zsh-autocomplete-plugin"
+
+if ! zplug check; then
+	zplug install
+fi
+zplug load
 
 # Alias
 alias ls='exa -la'
 alias g='git'
 alias gl='git log --pretty="format:%C(yellow)%h %C(green)%cd %C(reset)%s %C(red)%d %C(cyan)[%an]" --date=iso -50'
+alias gb='git branch'
 alias gs='git status -s'
 alias gp='git push'
 alias gpl='git pull'
@@ -16,8 +29,6 @@ alias d='docker'
 alias dc='docker-compose'
 alias de='docker exec -it'
 alias tmux='tmux -CC'
-alias python='python3'
-alias pip='pip3'
 alias nb='jupyter notebook'
 
 # Color

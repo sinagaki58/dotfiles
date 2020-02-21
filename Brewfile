@@ -14,6 +14,8 @@ brew 'ripgrep'
 brew 'fd'
 brew 'fzf'
 brew 'exa'
+brew 'zplug'
+brew 'pyenv'
 
 cask "google-chrome"
 cask "iterm2"
