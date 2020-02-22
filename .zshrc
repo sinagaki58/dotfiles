@@ -8,8 +8,8 @@ eval "$(pyenv init -)"
 # zplug
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
+zplug "zsh-users/zsh-completions"
 zplug "norman-abramovitz/cf-zsh-autocomplete-plugin"
-
 if ! zplug check; then
 	zplug install
 fi
@@ -32,8 +32,7 @@ alias tmux='tmux -CC'
 alias nb='jupyter notebook'
 
 # Color
-autoload -Uz colors
-colors
+autoload -Uz colors && colors
 export LSCOLORS=exfxcxdxbxegedabagacad
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
@@ -41,17 +40,16 @@ zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'c
 # Prompt
 PROMPT="%{${fg[cyan]}%}λ %{${reset_color}%}"
 
-# History
+# option
 setopt share_history
 setopt hist_ignore_all_dups
+setopt auto_cd
+setopt auto_list
+setopt auto_menu
 
 # Autoload
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-# Move
-setopt auto_cd
 
 # function
 function select-history() {
@@ -60,4 +58,15 @@ function select-history() {
 }
 zle -N select-history
 bindkey '^r' select-history
+
+function fssh() {
+    local sshLoginHost
+    sshLoginHost=`cat ~/.ssh/config | grep -E "Host\s" | grep -v \* | awk '{print $2}' | fzf`
+
+    if [ "$sshLoginHost" = "" ]; then
+        return 1
+    fi
+
+    ssh ${sshLoginHost}
+}
 
