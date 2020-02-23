@@ -62,11 +62,18 @@ bindkey '^r' select-history
 function fssh() {
     local sshLoginHost
     sshLoginHost=`cat ~/.ssh/config | grep -E "Host\s" | grep -v \* | awk '{print $2}' | fzf`
-
     if [ "$sshLoginHost" = "" ]; then
         return 1
     fi
-
     ssh ${sshLoginHost}
+}
+
+function fcd() {
+		local project
+		project=`ls ~/projects | awk '{print $7}' | fzf`
+		if [ "$project" = "" ]; then
+						return 1
+		fi
+		cd ~/projects/${project}
 }
 
