@@ -1,10 +1,10 @@
 setup:
-	make init
-	make linkg
+	make homebrew
+	make link
 	make install
 
-init:
-	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install | ruby
+homebrew:
+	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | /bin/bash
 
 link:
 	ln -sf ~/dotfiles/.vimrc ~/.vimrc
