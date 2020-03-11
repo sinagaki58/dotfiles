@@ -77,3 +77,13 @@ function fcd() {
 		cd ~/projects/${project}
 }
 
+function fcode() {
+		local project
+		project=`ls ~/projects | awk '{print $7}' | fzf`
+		if [ "$project" = "" ]; then
+						return 1
+		fi
+		code ~/projects/${project}
+}
+
+
