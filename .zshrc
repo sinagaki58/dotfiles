@@ -86,4 +86,3 @@ function fcode() {
 		code ~/projects/${project}
 }
 
-
