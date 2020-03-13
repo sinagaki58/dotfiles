@@ -27,7 +27,7 @@ cask 'alfred'
 cask 'visual-studio-code'
 cask 'notion'
 cask 'hyperswitch'
-cask 'cmd-eikana'
+cask 'karabiner-elements'
 cask 'hiddenbar'
 
 mas "Slack", id: 803453959
