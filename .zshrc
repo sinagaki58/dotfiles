@@ -28,7 +28,6 @@ alias gbd='git branch | fzf | xargs git branch -d'
 alias d='docker'
 alias dc='docker-compose'
 alias de='docker exec -it'
-alias tmux='tmux -CC'
 alias nb='jupyter notebook'
 
 # Color
