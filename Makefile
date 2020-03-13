@@ -10,6 +10,7 @@ link:
 	ln -sf ~/dotfiles/.vimrc ~/.vimrc
 	ln -sf ~/dotfiles/.zshrc ~/.zshrc
 	ln -sf ~/dotfiles/.tigrc ~/.tigrc
+	ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 install:
 	brew bundle --file=~/dotfiles/Brewfile

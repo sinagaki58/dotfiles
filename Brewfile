@@ -27,7 +27,7 @@ cask 'alfred'
 cask 'visual-studio-code'
 cask 'notion'
 cask 'hyperswitch'
-cask 'cmd-eikana'
+cask 'karabiner-elements'
 cask 'hiddenbar'
 cask 'scroll-reverser'
 
