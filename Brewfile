@@ -29,6 +29,7 @@ cask 'notion'
 cask 'hyperswitch'
 cask 'cmd-eikana'
 cask 'hiddenbar'
+cask 'scroll-reverser'
 
 mas "Slack", id: 803453959
 mas "Spark", id: 1176895641
