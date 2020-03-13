@@ -13,13 +13,11 @@
     "Red Component" : 0.46875584125518799
   },
   "Use Italic Font" : true,
-  "HotKey Characters" : "",
   "Foreground Color" : {
     "Green Component" : 0.96665072441101074,
     "Blue Component" : 0.9264865517616272,
     "Red Component" : 0.97033727169036865
   },
-  "HotKey Window Floats" : false,
   "Right Option Key Sends" : 0,
   "Show Status Bar" : true,
   "Character Encoding" : 4,
@@ -51,7 +49,6 @@
   "Scrollback With Status Bar" : false,
   "Scrollback Lines" : 1000,
   "Scrollback in Alternate Screen" : true,
-  "HotKey Window Reopens On Activation" : false,
   "Status Bar Layout" : {
     "components" : [
       {
@@ -59,17 +56,17 @@
         "configuration" : {
           "knobs" : {
             "path" : "path",
+            "maxwidth" : 1.7976931348623157e+308,
+            "base: priority" : 5,
+            "base: compression resistance" : 1,
+            "minwidth" : 0,
             "shared text color" : {
               "Red Component" : 0.90000000000000002,
               "Color Space" : "sRGB",
               "Blue Component" : 0.63,
               "Alpha Component" : 1,
               "Green Component" : 0.63
-            },
-            "base: priority" : 5,
-            "base: compression resistance" : 1,
-            "minwidth" : 0,
-            "maxwidth" : 1.7976931348623157e+308
+            }
           },
           "layout advanced configuration dictionary value" : {
             "font" : ".AppleSystemUIFont 12",
@@ -169,17 +166,17 @@
   "BM Growl" : true,
   "AWDS Window Directory" : "",
   "Icon" : 1,
+  "Ansi 3 Color" : {
+    "Green Component" : 0.70341014862060547,
+    "Blue Component" : 0.16496320068836212,
+    "Red Component" : 0.91225624084472656
+  },
   "Link Color" : {
     "Red Component" : 0,
     "Color Space" : "sRGB",
     "Blue Component" : 0.73423302173614502,
     "Alpha Component" : 1,
     "Green Component" : 0.35916060209274292
-  },
-  "Ansi 3 Color" : {
-    "Green Component" : 0.70341014862060547,
-    "Blue Component" : 0.16496320068836212,
-    "Red Component" : 0.91225624084472656
   },
   "Shortcut" : "",
   "Background Image Location" : "",
@@ -191,7 +188,63 @@
   "Unlimited Scrollback" : false,
   "Custom Command" : "No",
   "AWDS Tab Option" : "Recycle",
-  "HotKey Key Code" : 0,
+  "Smart Selection Rules" : [
+    {
+      "notes" : "Word bounded by whitespace",
+      "regex" : "\\S+",
+      "precision" : "low"
+    },
+    {
+      "notes" : "C++ namespace::identifier",
+      "regex" : "([a-zA-Z0-9_]+::)+[a-zA-Z0-9_]+",
+      "precision" : "normal"
+    },
+    {
+      "notes" : "Paths",
+      "regex" : "\\~?\/?([[:letter:][:number:]._-]+\/+)+[[:letter:][:number:]._-]+\/?",
+      "precision" : "normal"
+    },
+    {
+      "notes" : "Quoted string",
+      "regex" : "@?\"(?:[^\"\\\\]|\\\\.)*\"",
+      "precision" : "normal"
+    },
+    {
+      "notes" : "Java\/Python include paths",
+      "regex" : "([[:letter:][:number:]._]+\\.)+[[:letter:][:number:]._]+",
+      "precision" : "normal"
+    },
+    {
+      "notes" : "mailto URL",
+      "regex" : "\\bmailto:([a-z0-9A-Z_]+@)?([a-zA-Z0-9\\-]+\\.)*[a-zA-Z0-9\\-]+\\b",
+      "precision" : "normal"
+    },
+    {
+      "notes" : "Obj-C selector",
+      "regex" : "@selector\\([^)]+\\)",
+      "precision" : "high"
+    },
+    {
+      "notes" : "email address",
+      "regex" : "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}\\b",
+      "precision" : "high"
+    },
+    {
+      "notes" : "HTTP URL",
+      "regex" : "https?:\/\/([a-z0-9A-Z]+(:[a-zA-Z0-9]+)?@)?[a-z0-9A-Z]+(\\.[a-z0-9A-Z]+)*((:[0-9]+)?)(\/[a-zA-Z0-9;\/\\.\\-_+%~?&@=#\\(\\)]*)?",
+      "precision" : "very_high"
+    },
+    {
+      "notes" : "SSH URL",
+      "regex" : "\\bssh:([a-z0-9A-Z_]+@)?([a-zA-Z0-9\\-]+\\.)*[a-zA-Z0-9\\-]+\\b",
+      "precision" : "very_high"
+    },
+    {
+      "notes" : "Telnet URL",
+      "regex" : "\\btelnet:([a-z0-9A-Z_]+@)?([a-zA-Z0-9\\-]+\\.)*[a-zA-Z0-9\\-]+\\b",
+      "precision" : "very_high"
+    }
+  ],
   "Title Components" : 2,
   "Log Directory" : "",
   "Keyboard Map" : {
@@ -357,63 +410,6 @@
     }
   },
   "Use Canonical Parser" : false,
-  "Smart Selection Rules" : [
-    {
-      "notes" : "Word bounded by whitespace",
-      "regex" : "\\S+",
-      "precision" : "low"
-    },
-    {
-      "notes" : "C++ namespace::identifier",
-      "regex" : "([a-zA-Z0-9_]+::)+[a-zA-Z0-9_]+",
-      "precision" : "normal"
-    },
-    {
-      "notes" : "Paths",
-      "regex" : "\\~?\/?([[:letter:][:number:]._-]+\/+)+[[:letter:][:number:]._-]+\/?",
-      "precision" : "normal"
-    },
-    {
-      "notes" : "Quoted string",
-      "regex" : "@?\"(?:[^\"\\\\]|\\\\.)*\"",
-      "precision" : "normal"
-    },
-    {
-      "notes" : "Java\/Python include paths",
-      "regex" : "([[:letter:][:number:]._]+\\.)+[[:letter:][:number:]._]+",
-      "precision" : "normal"
-    },
-    {
-      "notes" : "mailto URL",
-      "regex" : "\\bmailto:([a-z0-9A-Z_]+@)?([a-zA-Z0-9\\-]+\\.)*[a-zA-Z0-9\\-]+\\b",
-      "precision" : "normal"
-    },
-    {
-      "notes" : "Obj-C selector",
-      "regex" : "@selector\\([^)]+\\)",
-      "precision" : "high"
-    },
-    {
-      "notes" : "email address",
-      "regex" : "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}\\b",
-      "precision" : "high"
-    },
-    {
-      "notes" : "HTTP URL",
-      "regex" : "https?:\/\/([a-z0-9A-Z]+(:[a-zA-Z0-9]+)?@)?[a-z0-9A-Z]+(\\.[a-z0-9A-Z]+)*((:[0-9]+)?)(\/[a-zA-Z0-9;\/\\.\\-_+%~?&@=#\\(\\)]*)?",
-      "precision" : "very_high"
-    },
-    {
-      "notes" : "SSH URL",
-      "regex" : "\\bssh:([a-z0-9A-Z_]+@)?([a-zA-Z0-9\\-]+\\.)*[a-zA-Z0-9\\-]+\\b",
-      "precision" : "very_high"
-    },
-    {
-      "notes" : "Telnet URL",
-      "regex" : "\\btelnet:([a-z0-9A-Z_]+@)?([a-zA-Z0-9\\-]+\\.)*[a-zA-Z0-9\\-]+\\b",
-      "precision" : "very_high"
-    }
-  ],
   "Ansi 14 Color" : {
     "Green Component" : 0.73511248826980591,
     "Blue Component" : 0.79221165180206299,
@@ -440,19 +436,16 @@
   "Ansi 12 Color" : {
     "Green Component" : 0.34725069999694824,
     "Blue Component" : 0.47479093074798584,
-    "Red Component" : 0.074933364987373324
+    "Red Component" : 0.074933364987373352
   },
-  "Window Type" : 1,
+  "Window Type" : 0,
   "Allow Title Reporting" : false,
   "Use Bright Bold" : true,
-  "Has Hotkey" : false,
-  "HotKey Modifier Activation" : 0,
   "Cursor Text Color" : {
     "Green Component" : 0.22283002734184265,
     "Blue Component" : 0.20856963098049164,
     "Red Component" : 0.20568123459815979
   },
-  "HotKey Window Dock Click Action" : 0,
   "Default Bookmark" : "No",
   "Cursor Color" : {
     "Green Component" : 0.81186991930007935,
@@ -468,17 +461,17 @@
     "Blue Component" : 0.38021323084831238,
     "Red Component" : 0.81089001893997192
   },
-  "Ansi 8 Color" : {
-    "Green Component" : 0.3565424382686615,
-    "Blue Component" : 0.34851333498954773,
-    "Red Component" : 0.34871619939804077
-  },
+  "Idle Code" : 0,
   "Ansi 10 Color" : {
     "Green Component" : 0.49610027670860291,
     "Blue Component" : 0.17100538313388824,
     "Red Component" : 0.46425256133079529
   },
-  "Idle Code" : 0,
+  "Ansi 8 Color" : {
+    "Green Component" : 0.3565424382686615,
+    "Blue Component" : 0.34851333498954773,
+    "Red Component" : 0.34871619939804077
+  },
   "Badge Color" : {
     "Red Component" : 1,
     "Color Space" : "sRGB",
@@ -490,8 +483,8 @@
   "Smart Cursor Color" : true,
   "Semantic History" : {
     "editor" : "com.sublimetext.3",
-    "action" : "best editor",
-    "text" : ""
+    "text" : "",
+    "action" : "best editor"
   },
   "Ambiguous Double Width" : false,
   "Blur Radius" : 4.7853386738578667,
@@ -513,20 +506,17 @@
   },
   "AWDS Tab Directory" : "",
   "AWDS Pane Option" : "Recycle",
-  "HotKey Window AutoHides" : true,
   "Command" : "",
   "Terminal Type" : "xterm-256color",
   "Horizontal Spacing" : 1,
   "Option Key Sends" : 0,
   "Blink Allowed" : false,
   "Minimum Contrast" : 0,
-  "HotKey Modifier Flags" : 0,
   "Ansi 15 Color" : {
     "Green Component" : 0.71090340614318848,
     "Blue Component" : 0.68263441324234009,
     "Red Component" : 0.6965288519859314
   },
-  "HotKey Window Animates" : false,
   "Ansi 6 Color" : {
     "Green Component" : 0.60572487115859985,
     "Blue Component" : 0.67739421129226685,
@@ -539,11 +529,9 @@
     "Blue Component" : 0.11759774386882782,
     "Red Component" : 0.11759926378726959
   },
-  "HotKey Activated By Modifier" : false,
   "Screen" : -1,
   "AWDS Window Option" : "Recycle",
   "Initial Use Transparency" : true,
-  "HotKey Characters Ignoring Modifiers" : "",
   "Non Ascii Font" : "Monaco 12",
   "Ansi 13 Color" : {
     "Green Component" : 0.25756442546844482,
@@ -551,9 +539,6 @@
     "Red Component" : 0.37626489996910095
   },
   "Columns" : 80,
-  "HotKey Alternate Shortcuts" : [
-
-  ],
   "Visual Bell" : true,
   "Custom Directory" : "Recycle",
   "Ansi 5 Color" : {
