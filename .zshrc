@@ -22,6 +22,7 @@ alias gl='git log --pretty="format:%C(yellow)%h %C(green)%cd %C(reset)%s %C(red)
 alias gb='git branch'
 alias gs='git status -s'
 alias gp='git push'
+alias gf='git add . && git commit -m "fix" && git push'
 alias gpl='git pull'
 alias gch='git branch | fzf | xargs git checkout'
 alias gbd='git branch | fzf | xargs git branch -d'
