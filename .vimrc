@@ -27,14 +27,14 @@ imap <C-h> <BS>
 imap <C-k> <Esc>D
 imap <C-u> <Esc>dd
 " ウィンドウ移動
-nnoremap s <Nop>
-nnoremap sj <C-w>j
-nnoremap sk <C-w>k
-nnoremap sl <C-w>l
-nnoremap sh <C-w>h
+nnoremap <C-s> <Nop>
+nnoremap <C-s>j <C-w>j
+nnoremap <C-s>k <C-w>k
+nnoremap <C-s>l <C-w>l
+nnoremap <C-s>h <C-w>h
 " タブ移動
-nnoremap sn gt
-nnoremap sp gT
+nnoremap <C-s>n gt
+nnoremap <C-s>p gT
 
 set encoding=utf8 " エンコーディング
 set t_Co=256  	" vimに色を付ける
