@@ -17,6 +17,7 @@ zplug load
 
 # Alias
 alias ls='exa -la'
+alias cat='bat'
 alias g='git'
 alias gl='git log --pretty="format:%C(yellow)%h %C(green)%cd %C(reset)%s %C(red)%d %C(cyan)[%an]" --date=iso -50'
 alias gb='git branch'

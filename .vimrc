@@ -16,25 +16,23 @@ Plug 'itchyny/lightline.vim'
 call plug#end()
 
 " InsertモードでEmacsのキーバインドを使えるようにする
-imap <C-p> <Up>
-imap <C-n> <Down>
-imap <C-b> <Left>
-imap <C-f> <Right>
-imap <C-a> <Home>
-imap <C-e> <End>
-imap <C-d> <Del>
-imap <C-h> <BS>
-imap <C-k> <Esc>D
-imap <C-u> <Esc>dd
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-d> <Del>
+inoremap <C-h> <BS>
+" NormalモードでEmacsのキーバインドを使えるようにする
+nnoremap <C-a> <Home>
+nnoremap <C-e> <End>
+nnoremap <C-d> <Del>
+nnoremap <C-h> <BS>
 " ウィンドウ移動
-nnoremap <C-s> <Nop>
-nnoremap <C-s>j <C-w>j
-nnoremap <C-s>k <C-w>k
-nnoremap <C-s>l <C-w>l
-nnoremap <C-s>h <C-w>h
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
 " タブ移動
-nnoremap <C-s>n gt
-nnoremap <C-s>p gT
+nnoremap sn gt
+nnoremap sp gT
 
 set encoding=utf8 " エンコーディング
 set t_Co=256  	" vimに色を付ける
@@ -60,7 +58,7 @@ syntax on
 filetype plugin indent on
 
 " NERDTree
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap <silent><C-x> :NERDTreeToggle<CR>
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
