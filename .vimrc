@@ -42,6 +42,7 @@ set incsearch 	" インクリメンタルサーチ
 set showmode  	" モードを表示する
 set title 			" 編集中のファイル名を表示
 set tabstop=2 	" タブのスペース数
+set shiftwidth=2  " 改行時のスペース数
 set ruler  			" ルーラーの表示
 set laststatus=2 " ステータスラインを常に表示
 set autoread     " 他でファイルが編集された時に自動で読み込む
