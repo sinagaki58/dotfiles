@@ -33,6 +33,8 @@ nnoremap sh <C-w>h
 " タブ移動
 nnoremap sn gt
 nnoremap sp gT
+" ESCキー2度押しでハイライトの切り替え
+nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
 
 set encoding=utf8 " エンコーディング
 set t_Co=256  	" vimに色を付ける
@@ -51,6 +53,7 @@ set wrapscan		" 検索がファイル末尾まで進んだら、ファイル先�
 set ignorecase	"	検索文字列が小文字の場合は大文字小文字を区別なく検索する
 set smartcase		"	検索文字列に大文字が含まれている場合は区別して検索する
 set noincsearch	"	検索文字列入力時に順次対象文字列にヒットさせない
+set wildmenu " コマンドモードの補完
 
 colorscheme molokai
 highlight CursorLine ctermfg=White
