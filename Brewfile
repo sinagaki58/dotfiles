@@ -30,8 +30,9 @@ cask 'hyperswitch'
 cask 'karabiner-elements'
 cask 'hiddenbar'
 cask 'scroll-reverser'
+cask 'slack'
+cask 'spark'
 
-mas "Slack", id: 803453959
-mas "Spark", id: 1176895641
 mas "Magnet", id: 441258766
 mas "Xcode", id: 497799835
+
