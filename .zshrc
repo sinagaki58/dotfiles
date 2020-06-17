@@ -32,6 +32,10 @@ alias d='docker'
 alias dc='docker-compose'
 alias de='docker exec -it'
 alias nb='jupyter notebook'
+alias python='python3'
+alias python2='python'
+alias k='kubectl'
+alias bp='bpctl'
 
 # Color
 autoload -Uz colors && colors
@@ -43,7 +47,7 @@ zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'c
 PROMPT="%{${fg[cyan]}%}λ %{${reset_color}%}"
 
 # option
-setopt share_history
+#setopt share_history
 setopt hist_ignore_all_dups
 setopt auto_cd
 setopt auto_list
@@ -54,12 +58,12 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # function
-function select-history() {
+function fhistory() {
   BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
   CURSOR=$#BUFFER
 }
-zle -N select-history
-bindkey '^r' select-history
+zle -N fhistory
+bindkey '^r' fhistory
 
 function fssh() {
     local sshLoginHost

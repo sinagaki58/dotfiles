@@ -16,6 +16,7 @@ brew 'fzf'
 brew 'exa'
 brew 'zplug'
 brew 'pyenv'
+brew 'python'
 
 cask "google-chrome"
 cask "iterm2"

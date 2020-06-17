@@ -3,3 +3,6 @@
   email = s.inagaki58@gmail.com
 [fetch]
 	prune = true
+[push]
+	default = current
+
