@@ -26,7 +26,7 @@ alias gp='git push'
 alias gc='git clone'
 alias gf='git add . && git commit -m "fix" && git push'
 alias gpl='git pull'
-alias gch='git branch | fzf | xargs git checkout'
+alias gch='git branch | fzf | xargs git checkout && git pull'
 alias gbd='git branch | fzf | xargs git branch -d'
 alias d='docker'
 alias dc='docker-compose'
@@ -44,7 +44,7 @@ export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
 # Prompt
-PROMPT="%{${fg[cyan]}%}λ %{${reset_color}%}"
+PROMPT="%{${fg[cyan]}%}$ %{${reset_color}%}"
 
 # option
 #setopt share_history
@@ -65,7 +65,7 @@ function fhistory() {
 zle -N fhistory
 bindkey '^r' fhistory
 
-function fssh() {
+function fs() {
     local sshLoginHost
     sshLoginHost=`cat ~/.ssh/config | grep -E "Host\s" | grep -v \* | awk '{print $2}' | fzf`
     if [ "$sshLoginHost" = "" ]; then
@@ -83,7 +83,7 @@ function fcd() {
 		cd ~/projects/${project}
 }
 
-function fcode() {
+function fc() {
 		local project
 		project=`ls ~/projects | awk '{print $7}' | fzf`
 		if [ "$project" = "" ]; then
@@ -92,7 +92,7 @@ function fcode() {
 		code ~/projects/${project}
 }
 
-function tssh() {
+function ts() {
 	if [ -n "$SESSION_NAME" ];then
 		session=$SESSION_NAME
 	else
