@@ -12,13 +12,10 @@ link:
 	ln -sf ~/dotfiles/.zshrc ~/.zshrc
 	ln -sf ~/dotfiles/.tigrc ~/.tigrc
 	ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
+	ln -sf ~/.ssh/config ~/projects/ssh
 
 install:
 	brew bundle --file=~/dotfiles/Brewfile
 
 cp-gitconfig:
 	cp ~/dotfiles/.gitconfig ~/.gitconfig
-
-rust:
-	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-

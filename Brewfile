@@ -17,6 +17,7 @@ brew 'exa'
 brew 'zplug'
 brew 'pyenv'
 brew 'python'
+brew 'jq'
 
 cask "google-chrome"
 cask "iterm2"
@@ -36,4 +37,3 @@ cask 'spark'
 
 mas "Magnet", id: 441258766
 mas "Xcode", id: 497799835
-

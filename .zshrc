@@ -35,6 +35,8 @@ alias nb='jupyter notebook'
 alias python='python3'
 alias python2='python'
 alias k='kubectl'
+alias ktx='kubectx'
+alias kns='kubens'
 alias bp='bpctl'
 
 # Color
@@ -90,6 +92,15 @@ function fc() {
 						return 1
 		fi
 		code ~/projects/${project}
+}
+
+function fv() {
+		local project
+		project=`ls ~/projects | awk '{print $7}' | fzf`
+		if [ "$project" = "" ]; then
+						return 1
+		fi
+		vim ~/projects/${project}
 }
 
 function ts() {
