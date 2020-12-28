@@ -15,25 +15,21 @@ brew 'fd'
 brew 'fzf'
 brew 'exa'
 brew 'zplug'
-brew 'pyenv'
 brew 'python'
-brew 'jq'
+brew 'go'
+brew 'ghq'
 
 cask "google-chrome"
 cask "iterm2"
 cask "1password"
 cask "docker"
 cask "dropbox"
-cask "spotify"
 cask 'alfred'
 cask 'visual-studio-code'
-cask 'notion'
 cask 'hyperswitch'
 cask 'karabiner-elements'
 cask 'hiddenbar'
-cask 'scroll-reverser'
 cask 'slack'
-cask 'spark'
 
 mas "Magnet", id: 441258766
 mas "Xcode", id: 497799835

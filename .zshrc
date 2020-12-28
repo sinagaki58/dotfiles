@@ -1,9 +1,6 @@
 # Path
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.deno/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
 
 # zplug
 export ZPLUG_HOME=/usr/local/opt/zplug
@@ -32,8 +29,8 @@ alias d='docker'
 alias dc='docker-compose'
 alias de='docker exec -it'
 alias nb='jupyter notebook'
+alias pip='pip3'
 alias python='python3'
-alias python2='python'
 alias k='kubectl'
 alias ktx='kubectx'
 alias kns='kubens'
@@ -60,16 +57,15 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # function
-function fhistory() {
+function fh() {
   BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
   CURSOR=$#BUFFER
 }
-zle -N fhistory
-bindkey '^r' fhistory
+zle -N fh
+bindkey '^r' fh
 
 function fs() {
-    local sshLoginHost
-    sshLoginHost=`cat ~/.ssh/config | grep -E "Host\s" | grep -v \* | awk '{print $2}' | fzf`
+    local sshLoginHost=`cat ~/.ssh/config | grep -E "Host\s" | grep -v \* | awk '{print $2}' | fzf`
     if [ "$sshLoginHost" = "" ]; then
         return 1
     fi
@@ -77,26 +73,31 @@ function fs() {
 }
 
 function fcd() {
-		local project
-		project=`ls ~/projects | awk '{print $7}' | fzf`
+		local project=`ghq list | fzf`
 		if [ "$project" = "" ]; then
 						return 1
 		fi
-		cd ~/projects/${project}
+		cd ~/ghq/${project}
 }
 
 function fc() {
-		local project
-		project=`ls ~/projects | awk '{print $7}' | fzf`
+		local project=`ghq list | fzf`
 		if [ "$project" = "" ]; then
 						return 1
 		fi
-		code ~/projects/${project}
+		cd ~/ghq/${project} && code ~/ghq/${project}
+}
+
+function fcc() {
+		local project=`ls ~/projects | awk '{print $7}' | fzf`
+		if [ "$project" = "" ]; then
+						return 1
+		fi
+		cd ~/projects/${project} && code ~/projects/${project}
 }
 
 function fv() {
-		local project
-		project=`ls ~/projects | awk '{print $7}' | fzf`
+		local project=`ls ~/projects | awk '{print $7}' | fzf`
 		if [ "$project" = "" ]; then
 						return 1
 		fi
