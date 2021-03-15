@@ -18,6 +18,8 @@ brew 'zplug'
 brew 'python'
 brew 'go'
 brew 'ghq'
+brew 'direnv'
+brew 'mkcert'
 
 cask "google-chrome"
 cask "iterm2"

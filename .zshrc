@@ -1,6 +1,8 @@
 # Path
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+eval "$(direnv hook zsh)"
+eval "$(opam env)"
 
 # zplug
 export ZPLUG_HOME=/usr/local/opt/zplug
@@ -15,13 +17,16 @@ zplug load
 # Alias
 alias ls='exa -la'
 alias cat='bat'
+alias gc='gcloud'
+alias gcc='gcc-10'
 alias g='git'
 alias gl='git log --pretty="format:%C(yellow)%h %C(green)%cd %C(reset)%s %C(red)%d %C(cyan)[%an]" --date=iso -50'
 alias gb='git branch'
 alias gs='git status -s'
 alias gp='git push'
-alias gc='git clone'
+alias gg='ghq get'
 alias gf='git add . && git commit -m "fix" && git push'
+alias gls='ghq list'
 alias gpl='git pull'
 alias gch='git branch | fzf | xargs git checkout && git pull'
 alias gbd='git branch | fzf | xargs git branch -d'
@@ -35,6 +40,7 @@ alias k='kubectl'
 alias ktx='kubectx'
 alias kns='kubens'
 alias bp='bpctl'
+alias rld='source ~/.zshrc && source ~/.zprofile'
 
 # Color
 autoload -Uz colors && colors
@@ -136,3 +142,9 @@ function ts() {
 	### セッションにアタッチ
 	tmux attach-session -t $session
 }
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/shinagak/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/shinagak/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/shinagak/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/shinagak/google-cloud-sdk/completion.zsh.inc'; fi
