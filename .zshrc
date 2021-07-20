@@ -94,20 +94,8 @@ function fc() {
 		cd ~/ghq/${project} && code ~/ghq/${project}
 }
 
-function fcc() {
-		local project=`ls ~/projects | awk '{print $7}' | fzf`
-		if [ "$project" = "" ]; then
-						return 1
-		fi
-		cd ~/projects/${project} && code ~/projects/${project}
-}
-
 function fv() {
-		local project=`ls ~/projects | awk '{print $7}' | fzf`
-		if [ "$project" = "" ]; then
-						return 1
-		fi
-		vim ~/projects/${project}
+		vim ~/.ssh/config
 }
 
 function ts() {
