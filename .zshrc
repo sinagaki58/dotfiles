@@ -40,6 +40,7 @@ alias k='kubectl'
 alias ktx='kubectx'
 alias kns='kubens'
 alias bp='bpctl'
+alias ftx='flctl config use-context $(flctl config get-contexts -o name | fzf)'
 alias rld='source ~/.zshrc && source ~/.zprofile'
 
 # Color
