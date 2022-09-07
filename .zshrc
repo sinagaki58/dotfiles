@@ -1,16 +1,13 @@
 # Path
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
 eval "$(direnv hook zsh)"
-eval "$(opam env)"
-
+export PATH="$HOME/Library/Python/3.8/bin:$PATH"
 # zplug
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
+source ~/.zplug/init.zsh
 zplug "zsh-users/zsh-completions"
 zplug "norman-abramovitz/cf-zsh-autocomplete-plugin"
 if ! zplug check; then
-	zplug install
+   zplug install
 fi
 zplug load
 
@@ -80,11 +77,11 @@ function fs() {
 }
 
 function fcd() {
-		local project=`ghq list | fzf`
-		if [ "$project" = "" ]; then
-						return 1
-		fi
-		cd ~/ghq/${project}
+	local project=`ghq list | fzf`
+    if [ "$project" = "" ]; then
+		return 1
+	fi
+	cd ~/ghq/${project}
 }
 
 function fc() {
@@ -131,9 +128,3 @@ function ts() {
 	### セッションにアタッチ
 	tmux attach-session -t $session
 }
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/shinagak/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/shinagak/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/shinagak/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/shinagak/google-cloud-sdk/completion.zsh.inc'; fi
